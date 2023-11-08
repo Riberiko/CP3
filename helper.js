@@ -1,4 +1,10 @@
-
+/**
+ * Name : Riberiko Niyomwungere
+ * Date : November 07, 2023
+ *
+ * This is the helper script, it returns all methods utilized by the other programs
+ *
+ **/
 
 const myModule = (function (){
 
@@ -45,22 +51,41 @@ const myModule = (function (){
     return document.createElement(tagName);
   }
 
+  /**
+   * Verifies the status for the response ensuring that it is ok
+   * @param {Response} res - The response object
+   *
+   **/
   function statusCheck(res)
   {
     if(!res.ok) throw new Error(`HTTP Error Code ${res.status}`)
     return res.json()
   }
 
+  /**
+   * Name is alittle misleading this can be used just to write
+   * messages to the screen
+   *
+   * @param {string} err - the text that you want to be printed
+   *
+   **/
   function handleError(err)
   {
     myModule.id('message').innerText = err + ' Please Make sure you have connection to the internet and refresh the page.'
   }
 
+  /**
+   * Stops the timer from running
+   *
+   **/
   function stopTimer()
   {
     clearInterval(timerId)
   }
 
+  /**
+   * Start the timer
+   **/
   function startTimer()
   {
     clearInterval(timerId)
@@ -74,6 +99,9 @@ const myModule = (function (){
     }, milisecToSec)
   }
 
+  /**
+   * Restarts the timer by setting it to zero and then starting it.
+   **/
   function restartTimer()
   {
     stopTimer()

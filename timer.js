@@ -1,11 +1,21 @@
+/**
+ * Name : Riberiko Niyomwungere
+ * Date : November 07, 2023
+ *
+ * This is the script for the timer, the idea origianally what that i wanted
+ * to separate it form the main script file and make it its own stand alone
+ * the idea did not work
+ **/
 "use strict";
-
 (function(){
 
   //Global Variables
 
   window.addEventListener('load', init)
 
+  /**
+   * Sets up the timer when the page loads
+   **/
   function init()
   {
     const spanMin = myModule.gen('span')

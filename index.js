@@ -1,9 +1,8 @@
 /**
- * AD 320 Game Exercise
+ * Name : Riberiko Niyomwungere
+ * Date : November 07, 2023
  *
- * This java script file is attached to index.html. It helps create the
- * functions that make the website interactive and able to play a game. Using
- * functions on this page we can switch game views and get a timer going.
+ * This is the main script for the sudoku it conatins many of the fucntions that make the website/app work
  */
 "use strict";
 
@@ -115,13 +114,14 @@
         next.push(getValidSet(next[0][0], next[0][1]))
         stack.push(next)
 
-      }, 50)
-
-      
+      }, 50) //This is the Interval that is responsible for the auto solve function, the heigher this number, the slower the process
 
     })
   }
 
+  /**
+   * Gives the end user a hint for the solution for the sudoku
+   **/
   function getHint(e)
   {
     updateBoard()
@@ -143,6 +143,9 @@
     myModule.id('hint-count').innerText = ++hintCount
   }
 
+  /**
+   * Creates the board
+   **/
   function initialBoardSetup()
   {
     const grid = myModule.id('grid')
@@ -166,6 +169,9 @@
     grids = myModule.id('grid').querySelectorAll('div')
   }
 
+  /**
+   * Gets a new board from the api
+   **/
   function requestNewboard()
   {
     myModule.id('hint-count').innerText = hintCount
@@ -183,6 +189,9 @@
       .catch(myModule.handleError)
   }
 
+  /**
+   * Loads the solution from the api into the board on screen
+   **/
   function loadNewBoard()
   {
 
@@ -218,6 +227,13 @@
     myModule.id('hint-count').innerText = hintCount
   }
 
+  /**
+   * Puts a value into the board at the appropriate place
+   *
+   * @param {any} value - the value to be inserted into the board
+   * @param {int} x - for the placemnet
+   * @param {int} y - for the placemnet
+   **/
   function setIntoBoard(x, y, value)
   {
     const findG = Math.floor(y/3)*3 + Math.floor(x/3)
@@ -228,6 +244,9 @@
     return grids[findG].children[findI]
   }
 
+  /**
+   * Updates be backend board so that it matches whateve the user has on their screen
+   **/
   function updateBoard()
   {
     let y = 0, x = 0
@@ -256,6 +275,9 @@
 
   }
 
+  /**
+   * Ensure that the users input is actually what i expect it to be
+   **/
   function validateInput(e)
   {
     if(this.value == 0 || isNaN(this.value)) this.value = ''
@@ -264,6 +286,11 @@
 
   /** ---------------------------- Board Helper Functions ---------------------------- */
 
+  /**
+   * Gets the values in the columbn of the board
+   *
+   * @param {int} num - the columbn number to get
+   **/
   function getColumn(num)
   {
     let toReturn = []
@@ -271,11 +298,21 @@
     return toReturn
   }
 
+  /**
+   * Gets the values in the row of the board
+   *
+   * @param {int} num - the columbn number to get
+   **/
   function getRow(num)
   {
     return board[num]
   }
 
+  /**
+   * Gets the values in the squre of the board
+   *
+   * @param {int} num - the squre number to get
+   **/
   function getSquare(x, y)
   {
     let toReturn = []
@@ -286,6 +323,12 @@
     return toReturn
   }
 
+  /**
+   * Gets the next blank in the board after the specified place
+   *
+   * @param {int} x - the x value
+   * @param {int} y - the y value
+   **/
   function getNextBlankInput(x, y)
   {
     for(let i = y; i < 9; i++)
@@ -300,6 +343,12 @@
     return null
   }
 
+  /**
+   * Gets all the valid numbers for specified point
+   *
+   * @param {int} x - the x value
+   * @param {int} y - the y value
+   **/
   function getValidSet(x, y)
   {
     const toReturn = new Set([1,2,3,4,5,6,7,8,9])
