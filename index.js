@@ -62,8 +62,8 @@
     })
 
     menuInputs[4].addEventListener('click', () => {
-     updateBoard() 
-      
+      updateBoard() 
+
       const open = getNextBlankInput(0, 0)
       //keeping track of the current working, what can still go here, and what we have already tried
       if(open) stack.push([open, getValidSet(open[0], open[1])])
@@ -71,11 +71,11 @@
 
       //disabled all input
       myModule.qsa('input').forEach(inpt => inpt.disabled = true)
-  
+
       myModule.restartTimer()
       myModule.stopTimer()
       algId = setInterval(() => {
-        
+
         myModule.id('message').innerText = 'Solving: Still working on Problem'
         if(stack.length == 0)
         {

@@ -48,7 +48,7 @@
     myModule.id('timerCtl').appendChild(stop)
     myModule.id('timerCtl').appendChild(start)
     myModule.id('timerCtl').appendChild(restart)
-    
+
     myModule.startTimer()
   }
 
