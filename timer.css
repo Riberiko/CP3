@@ -1,0 +1,11 @@
+#timerCtl input{
+  padding: 0.5rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+}
+
+#timerDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

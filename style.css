@@ -1,0 +1,116 @@
+*{ margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  height: 100dvh;
+}
+
+main{
+  display: flex;
+  place-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+input[type=number] {
+  -moz-appearance:textfield; /* Firefox */
+}
+
+#message{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding-right: 0;
+  width: min(40vw, 80dvh);
+  height: min(40vw, 80dvh);
+  background-color: black;
+  min-height: 400px;
+  min-width: 400px;
+  border: 2px solid black;
+}
+
+#grid div{
+  display: grid;
+  background-color: blue;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+}
+
+#grid div:nth-child(2n)
+{
+  background-color: lightblue;
+}
+
+#grid div:nth-child(2n) input
+{
+  background-color: transparent;
+}
+
+#grid div input
+{
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+#grid div input:disabled
+{
+  background-color: rgba(50, 50, 50, 0.8);
+}
+
+article > nav{
+  display: flex;
+  justify-content: center;
+}
+
+article > nav input, aside input{
+  background-color: lightblue;
+  padding: 5px;
+  margin: 2.5px;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.inputTextSize{
+  font-size: 2rem;
+}
+
+
+
+input:disabled{
+  color: white;
+  background-color: darkgray;
+}
+
+p{
+  display: flex;
+  align-items: center;
+  margin: 2px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+span{
+  font-size: 2em;
+}
+
+.green{
+  background-color: green !important;
+}

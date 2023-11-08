@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="timer.css">
+
+    <script src="./helper.js"></script>
+    <script src="./index.js"></script>
+    <script src="./timer.js"></script>
+    <title>Sudoku</title>
+  </head>
+  <body>
+
+    <noscript>This app needs Javascript to function!</noscript>
+
+    <header id="message"></header>
+
+    <main>
+      <aside>
+        <h1>Information</h1>
+        <p>Hints Used: <span id="hint-count"></span></p>
+        <p>Dificulty: <span id="dificulty"></span></p>
+        <p>Board Is Solved: <span id="isValid">N/A</span></p>
+      </aside>
+
+      <article>
+        <section id="grid">
+        </section>
+
+        <nav>
+          <input type="button" value="New Board" />
+          <input type="button" value="Reset" />
+          <input type="button" value="Hint" />
+          <input type="button" value="validate" />
+          <input type="button" value="solve" />
+        </nav>
+      </article>
+
+      <aside id="timerDiv">
+        <h1>Timer Controls</h1>
+        <p id="timer"></p>
+        <div id="timerCtl"></div>
+      </aside>
+    </main>
+
+  </body>
+</html>
